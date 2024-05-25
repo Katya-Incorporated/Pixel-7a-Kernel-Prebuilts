@@ -9,7 +9,7 @@
 #define _BIGO_H_
 
 #include <linux/ioctl.h>
-#define __user
+
 #include <linux/types.h>
 
 /*

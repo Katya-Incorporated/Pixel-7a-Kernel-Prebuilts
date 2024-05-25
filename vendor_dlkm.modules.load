@@ -9,7 +9,7 @@ kernel/drivers/soc/google/pixel_stat/pixel_stat_sysfs.ko
 kernel/drivers/soc/google/pixel_stat/mm/pixel_stat_mm.ko
 kernel/drivers/regulator/slg51000-regulator.ko
 kernel/drivers/regulator/slg51002-regulator.ko
-kernel/drivers/block/null_blk.ko
+kernel/drivers/block/null_blk/null_blk.ko
 kernel/drivers/misc/sbb-mux/sbb-mux.ko
 kernel/drivers/mfd/slg51000-core.ko
 kernel/drivers/mfd/slg51002-core.ko
@@ -31,13 +31,15 @@ kernel/lib/crc-t10dif.ko
 extra/audiometrics.ko
 extra/bigocean.ko
 extra/btpower.ko
-extra/cl_dsp.ko
+extra/cl_dsp-core.ko
 extra/cnss2/cnss2.ko
 extra/cnss_genl/cnss_nl.ko
 extra/cnss_prealloc/cnss_prealloc.ko
 extra/cnss_utils/cnss_plat_ipc_qmi_svc.ko
 extra/cnss_utils/cnss_utils.ko
 extra/cnss_utils/wlan_firmware_service.ko
+extra/cs40l26-core.ko
+extra/cs40l26-i2c.ko
 extra/drv2624.ko
 extra/focal_touch.ko
 extra/goodix_brl_touch.ko
@@ -45,7 +47,6 @@ extra/goog_touch_interface.ko
 extra/google_dock.ko
 extra/google_dual_batt_gauge.ko
 extra/gxp.ko
-extra/input-cs40l26-i2c.ko
 extra/lwis.ko
 extra/mali_kbase.ko
 extra/mali_pixel.ko
@@ -62,5 +63,7 @@ extra/qrtr/qrtr.ko
 extra/snd-soc-cs35l41-i2c.ko
 extra/snd-soc-cs35l45-i2c.ko
 extra/snd-soc-cs40l26.ko
+extra/tests/kutf/mali_kutf.ko
+extra/tests/mali_kutf_clk_rate_trace/kernel/mali_kutf_clk_rate_trace_test_portal.ko
 extra/wlan.ko
 extra/wlan_mac/google_wlan_mac.ko

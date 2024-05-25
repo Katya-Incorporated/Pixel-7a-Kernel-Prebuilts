@@ -37,6 +37,7 @@
 #define V4L2_PIX_FMT_NV21M_P010 v4l2_fourcc('P', 'M', '2', '1')
 #define V4L2_PIX_FMT_NV16M_P210 v4l2_fourcc('P', 'M', '1', '6')
 #define V4L2_PIX_FMT_NV61M_P210 v4l2_fourcc('P', 'M', '6', '1')
+#define V4L2_PIX_FMT_NV12N_P010 v4l2_fourcc('N', 'P', '1', '2')
 #define V4L2_PIX_FMT_NV12_P010 v4l2_fourcc('P', 'N', '1', '2')
 #define V4L2_PIX_FMT_NV12M_SBWC_8B v4l2_fourcc('M', '1', 'S', '8')
 #define V4L2_PIX_FMT_NV12M_SBWC_10B v4l2_fourcc('M', '1', 'S', '1')
@@ -53,9 +54,9 @@
 #ifndef __ALIGN_UP
 #define __ALIGN_UP(x,a) (((x) + ((a) - 1)) & ~((a) - 1))
 #endif
-#define NV12N_Y_SIZE(w,h) (__ALIGN_UP((w), 16) * __ALIGN_UP((h), 16) + 256)
-#define NV12N_CBCR_SIZE(w,h) \
-(__ALIGN_UP((__ALIGN_UP((w), 16) * (__ALIGN_UP((h), 16) / 2) + 256), 16))
+#define NV12N_STRIDE(w) (__ALIGN_UP((w), 64))
+#define NV12N_Y_SIZE(w,h) (NV12N_STRIDE(w) * __ALIGN_UP((h), 16))
+#define NV12N_CBCR_SIZE(w,h) (NV12N_STRIDE(w) * __ALIGN_UP((h), 16) / 2)
 #define NV12N_CBCR_BASE(base,w,h) ((base) + NV12N_Y_SIZE((w), (h)))
 #define NV12N_10B_Y_8B_SIZE(w,h) (__ALIGN_UP((w), 64) * __ALIGN_UP((h), 16) + 256)
 #define NV12N_10B_Y_2B_SIZE(w,h) ((__ALIGN_UP((w) / 4, 16) * __ALIGN_UP((h), 16) + 64))
